@@ -1,0 +1,83 @@
+# BUGS
+These are fixed before adding features
+- none yet
+
+# PLANNED FEATURES
+- Blocks
+  - 3 copper ingot into an EXTRUDER machine to make a CABLE
+    - Explodes on excess power consumed
+  - 3 CABLE into a Binder machine to make a super-cable
+    - carries 9* the power
+    - Big Explode on excess power consumed
+  - Pipe
+    - To carry lava, water, radioactive byproduct, other?
+    - Made from stone in Extruder (concept: melt to 'concrete' and form into tube)
+    - Radioactive contents makes pipe radioactive
+- Extruder
+  - Generates cable from Copper ingots (3) using Lava to melt them, piston to push, hopper to extrude
+  - Must be buildable without machines
+  - Must be able to run without power (feed lava)
+  - with power the lava feed is not needed?
+- Generator
+  - Steam - power capacity based on fuel
+    - fuel to power generation
+      - wood - 1/2 power, short runtime 
+      - Coal - 1/2 power of cable
+      - lava - 1 power of cable
+    - needs pipe input for water
+    - another pipe if lava in use
+    - Solid input (hopper) if coal in use
+  - Water - 1/9th power capacity of a cable
+  - Solar - 1/3rd power capacity of a cable
+  - Lightning Rod (exists in Minecraft already)
+    - LOTS OF POWER
+    - Needs a lightning strike
+    - You probably want a battery to store the power generated!
+    - NEEDS super-cable, probably more than one?
+  - Atomic - Capacity of a Super-Cable
+    - Add radioactive block to world generator
+      - Kills player 1 heart per second when within 8 blocks, faster if closer
+    - Add radioactive protective gear
+    - Add radioactive detector - like compass but for radioactive block
+    - Add complex generator build
+    - Add massive explosion when things go wrong
+    - Add waste byproduct (liquid)
+      - cannot be placed in anything (e.g. itself, water, lava, other?), target block must be empty
+        - Implicitly this means it is not destroyed by lava
+      - Radioactive, so kills player when within 8 blocks
+      - Accumulates forever, expanding (matches reality, needs maintenance)
+        - use the Pump in reverse to PLACE liquid into an empty area
+- Binder
+    - Takes cable (3) and twists them into super-cable (9 times the carrying power)
+    - requires power to operate
+- Battery
+  - stores power to deliver when generator(s) down (e.g. nighttime for solar)
+    - Capacity?
+  - Can be used to build up power - e.g. to store until enough
+- Transducer
+  - reversible
+  - convert solid/liquid to energy for moving through cables
+  - convert energy to solid/liquid for inserting into machines
+  - Filter setting to determine WHAT is processed
+    - if cable has multiple items flowing through it, this transducer will only covert selected
+    - Should multi-selection be possible?  (e.g. for filling chests with more than one item type)
+- Pump
+  - Liquid Extractor, reversible to Liquid Placer
+  - Pump lava, water, etc
+  - power needs based on distance to block be processed (more power to reach further away)
+- Quarry
+  - extract solids from an area
+  - power needs based on distance to block be processed (more power to reach further away)
+- Electric Vehicles
+  - TRUCK
+    - carry blocks placed on it?
+    - Has a chest you put your items into?
+  - CAR
+    - multi-block shape
+    - Like horse but you sit inside it
+    - protection from mobs when inside
+    - Needs flat surface or stairs
+
+# TOO HARD, DON'T TRY
+Bugs that are too hard to fix, but we may get to one-day
+- Everything else

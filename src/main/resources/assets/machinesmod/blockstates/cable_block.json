@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "machinesmod:block/cable_block"
+    }
+  }
+}
