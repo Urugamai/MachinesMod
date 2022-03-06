@@ -31,15 +31,14 @@ public class MachinesModMain
     public MachinesModMain() {
         final IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
-        // Register the setup method for modloading
-// WAS       FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
+        // Register the setup method for mod loading
         modEventBus.addListener(this::setup);
 
-        // Register the enqueueIMC method for modloading
-        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::enqueueIMC);
+        // Register the enqueueIMC method for mod loading
+        modEventBus.addListener(this::enqueueIMC);
 
-        // Register the processIMC method for modloading
-        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::processIMC);
+        // Register the processIMC method for mod loading
+        modEventBus.addListener(this::processIMC);
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
@@ -50,20 +49,20 @@ public class MachinesModMain
 
     private void setup(final FMLCommonSetupEvent event)
     {
-        // some preinit code
-        LOGGER.info("HELLO FROM PREINIT for MachinesMod");
+        // some pre-init code
+        LOGGER.info("HELLO from INIT for MachinesMod");
 //        LOGGER.info("DIRT BLOCK >> {}", Blocks.DIRT.getRegistryName());
     }
 
     private void enqueueIMC(final InterModEnqueueEvent event)
     {
         // some example code to dispatch IMC to another mod
-        InterModComms.sendTo("machinesmod", "helloworld", () -> { LOGGER.info("Hello world from the MDK"); return "Hello world";});
+        InterModComms.sendTo("machinesmod", "hello_world", () -> { LOGGER.info("Hello world from the machinesmod MDK"); return "Hello world";});
     }
 
     private void processIMC(final InterModProcessEvent event)
     {
-        // some example code to receive and process InterModComms from other mods
+        // some example code to receive and process IMCs (Inter Mod Comm) from other mods
         LOGGER.info("Got IMC {}", event.getIMCStream().
                 map(m->m.messageSupplier().get()).
                 collect(Collectors.toList()));
@@ -72,7 +71,7 @@ public class MachinesModMain
     @SubscribeEvent
     public void onServerStarting(ServerStartingEvent event) {
         // do something when the server starts
-        LOGGER.info("HELLO from server starting");
+        LOGGER.info("HELLO from machinesmod - server starting");
     }
 
     // You can use EventBusSubscriber to automatically subscribe events on the contained class (this is subscribing to the MOD
@@ -82,7 +81,7 @@ public class MachinesModMain
         @SubscribeEvent
         public static void onBlocksRegistry(final RegistryEvent.Register<Block> blockRegistryEvent) {
             // register a new block here
-            LOGGER.info("HELLO from Register Block");
+            LOGGER.info("HELLO from machinesmod - Register Block");
         }
     }
 }

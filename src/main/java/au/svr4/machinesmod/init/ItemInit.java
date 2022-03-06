@@ -27,5 +27,5 @@ public class ItemInit {
 
     public static final RegistryObject<Item> CABLE = ITEMS.register("cable",
             () -> new Item(new Item.Properties().tab(ModCreativeTab.instance)));
-    // TODO Add more item properties such as Lava survival, etc, as needed
+    // TODO Add items and properties such as Lava survival, etc, as needed
 }
